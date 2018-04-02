@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.Master.cs" Inherits="FinalProject.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <body style="background-color:#235b18;">
+        <div>
+            
+            <table>
+                <tr>
+                    <td colspan ="2" style ="width:900px; height:100px; background-color:#a5dda1; text-align:center;">
+                        <h1>Cheeps</h1>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style ="width:200px; height:400px; background-color:#a5dda1; text-align:center; vertical-align:top; padding-top:20px;">
+                        <h1><img src="/Pictures/girlprofile.jpg" width="150" height="150" alt="Sample picture"> Profile Stuff</h1>
+                    </td>
+
+                    <td style ="width:700px; height:400px; background-color:#a5dda1; text-align:center; overflow:auto;">
+                        <h1>LiveFeed</h1>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
