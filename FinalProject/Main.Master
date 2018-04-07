@@ -77,7 +77,7 @@
             border:solid 1px #ccc;
         }
 
-        .leftpage
+        .leftpage 
         {
             width:250px;
             height:800px;           
