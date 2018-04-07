@@ -71,6 +71,9 @@
     <Content Include="App_Data\CheepsDatabase_log.ldf">
       <DependentUpon>CheepsDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\request.png" />
+    <Content Include="Images\search-icon.png" />
+    <Content Include="Images\search.png" />
     <Content Include="Images\social-media.png" />
     <Content Include="Main.Master" />
     <None Include="Web.Debug.config">

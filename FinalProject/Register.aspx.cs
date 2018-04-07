@@ -12,7 +12,7 @@ namespace FinalProject
     public partial class Register : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {/*
             if (IsPostBack)
             {
                 SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["UsersConnectionString"].ConnectionString);
@@ -21,13 +21,13 @@ namespace FinalProject
                 SqlCommand com = new SqlCommand(checkuser, c);
                 int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
 
-                if(temp == 1)
+                if(temp > 0)
                 {
                     Response.Write("User Already Exists");
                 }
 
                 c.Close();
-            }
+            }*/
         }
 
         protected void RegisterButton_Click(object sender, EventArgs e)
@@ -49,12 +49,22 @@ namespace FinalProject
 
                 com.ExecuteNonQuery();
 
-                Response.Write("Registration is Succesful");
+                Response.Write("Registration was succesful. Proceed to Login");
                 Response.Redirect("ManageData.aspx");
                 c.Close();
             }
             catch (Exception ex) {
-                Response.Write("Error:" + ex.ToString());
+                if (ex.GetType() == typeof(SqlException))
+                {
+                    if (ex.Message.Contains("PRIMARY KEY"))
+                    {
+                        Response.Write("Username already exists!");
+                    }
+                }
+                else
+                {
+                    throw ex;
+                }
             }
         }
 

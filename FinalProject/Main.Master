@@ -7,29 +7,183 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .content
+        {
+            max-width:1100px;
+            margin:auto;
+        }       
+
+        .style1
+        {
+            width:1100px;
+            height: 60px;
+        }
+         .style2
+        {
+            width:300px;
+            text-align:center;
+        }
+         .style3
+         {
+             width:30px;
+            
+        }
+         .style4
+         {
+             width:250px;
+         }
+         .style5
+         {
+             width:520px;
+         }
+         .style6
+         { 
+             width:200px;
+         }
+         .style7
+         {
+             width:40px;
+         }
+         .profileimg
+         {
+            border-radius:6px;
+            border:solid 1px #d4d4d4;
+            
+          }
+         .menu
+         {
+             height:35px;
+             margin-top:7px;
+             padding-top:12px;
+             background:lightskyblue;
+             transition: all 1s ease;
+             font-weight:bold;
+          }
+         .top
+         {
+             max-width:1510px;
+             height:75px;
+             background:lightskyblue;
+             margin:auto
+         }
+         .mainpage
+         {
+            max-width:1100px;
+            height:800px;
+            margin:auto;
+            background:#fbfbfb;
+            margin-bottom:10px;
+            border:solid 1px #ccc;
+        }
+
+        .leftpage
+        {
+            width:250px;
+            height:800px;           
+            float:left;
+            text-align: center;
+        }  
+        .centerpage
+        {
+            width:590px;
+            height:800px;
+            border:solid 1px #ccc;
+            float:left;
+         }
+        .rightpage
+        {
+            width:250px;
+            height:800px;
+            float:right;
+         }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <body style="background-color:#235b18;">
-        <div>
-            
-            <table>
-                <tr>
-                    <td colspan ="2" style ="width:900px; height:100px; background-color:#a5dda1; text-align:center;">
-                        <h1>Cheeps</h1>
-                    </td>
-                </tr>
+        <div class="top">
 
+            <table class ="style1" style="background-color:lightskyblue">
                 <tr>
-                    <td style ="width:200px; height:400px; background-color:#a5dda1; text-align:center; vertical-align:top; padding-top:20px;">
-                        <h1><img src="/Pictures/girlprofile.jpg" width="150" height="150" alt="Sample picture"> Profile Stuff</h1>
+                    <td class="style2">
+                        <asp:Label ID="title" runat="server" Text="Cheeps" Font-Names="Brush Script MT" Font-Size="30pt" ForeColor="White" Font-Bold="True"></asp:Label>
                     </td>
+                    <td class="style3" >
+                        <asp:Image ID="ImageSearch" runat="server" Height="25px" src="Images/search-icon.png"/>
+                    </td>
+                    <td class="style4">
 
-                    <td style ="width:700px; height:400px; background-color:#a5dda1; text-align:center; overflow:auto;">
-                        <h1>LiveFeed</h1>
+                        <asp:TextBox ID="TextSearch" runat="server" Width="150px" BackColor="White" BorderStyle="Solid" ForeColor="Gray"></asp:TextBox>
+                        &nbsp;                   
+                        <asp:Button ID="ButtonSearch" runat="server" Text="Search" BackColor="#0066FF" BorderColor="Black" ForeColor="White" />
+                    </td>
+                    <td class="style5">
+                        <table class="style5" style="height:60px">
+                            <tr>
+                                <td class="style4"></td>
+                                <td class="style7">
+                                    <asp:Image ID="Imagefriend" runat="server" Height="40px" src="Images/request.png"/>
+                                </td>
+                                <td>
+                                    <asp:LinkButton ID="NumRequest" runat="server">(0)</asp:LinkButton>
+                                </td>
+                                <td class="style6"></td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>
+        </div>
+        <div class="mainpage" >
+            <div class="leftpage">
+                <table style="margin-right:auto; margin-left:auto;">
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Image ID="Image1" runat="server" Height="150px" Width="130px" CssClass="profileimg"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="profileName" runat="server">Profile Name</asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <asp:FileUpload ID="FileUpload1" runat="server" Width="140px" />
+                            <asp:Button ID="buttonUpload" runat="server" Text="Upload" BackColor="#0066FF" BorderColor="Black" ForeColor="White" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <asp:Menu ID="Menu1" runat="server" Width="100%" ForeColor="White" Font-Names="Century Gothic" Font-Size="15pt">
+                                <Items>
+
+                                    <asp:MenuItem Text="Live Feed" Value="Live Feed"></asp:MenuItem>
+                                    <asp:MenuItem Text="My Friends" Value="My Friends"></asp:MenuItem>
+                                    <asp:MenuItem Text="My Albums" Value="My Albums"></asp:MenuItem>
+                                    <asp:MenuItem Text="Friend Requests" Value="Friend Requests"></asp:MenuItem>
+                                    <asp:MenuItem Text="Liked Posts" Value="Liked Posts"></asp:MenuItem>
+
+                                </Items>
+                                <StaticMenuItemStyle CssClass="menu" Width="220px"/>
+                            </asp:Menu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="centerpage">
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+            </div>
+            <div class="rightpage"></div>
         </div>
     </form>
 </body>
