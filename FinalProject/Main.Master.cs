@@ -13,5 +13,10 @@ namespace FinalProject
         {
 
         }
+
+        protected void DetailsView2_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+        {
+
+        }
     }
 }
