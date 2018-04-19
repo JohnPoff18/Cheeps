@@ -97,17 +97,7 @@
             height:800px;
             float:right;
          }
-        .livefeed
-        {
-            font-size:18px;
-            text-align:left;
-            border:solid 10px #fbfbfb;
        
-        }
-        .button
-        {
-            border:solid 10px #fbfbfb;
-        }
     </style>
 </head>
 <body>
@@ -192,33 +182,7 @@
             <div class="centerpage">
                 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
-                    <div class="button">
-                        <asp:TextBox ID="TextBox1" runat="server" Height="74px" Width="562px" style="margin-left: 0px"></asp:TextBox><br />
-                    </div>
-                    <div class="button">
-                        <asp:Button ID="CheepButton" runat="server" Text="Cheep" BorderWidth:10px />
-                    </div>
-                    <div>
-                    <asp:ListView ID="ListViewCheeps" runat="server" DataSourceID ="CheepsDataSource" class="livefeed">
-                        <LayoutTemplate>
-
-                            <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
-
-                        </LayoutTemplate>
-                        
-                            
-                                <ItemTemplate>
-                                    <div id="livefeed" runat="server" class="livefeed">
-                                     <%#Eval("Username") %> : 
-                                     <%#Eval("Cheep") %><br />
-                                     <%#Eval("Date") %><br />
-                                    </div>
-                                </ItemTemplate>
-                           
-                        
-                    </asp:ListView>
-                    </div>
-                    <asp:ObjectDataSource ID="CheepsDataSource" runat="server" TypeName="FinalProject.CheepDataAccess" SelectMethod="getCheeps"></asp:ObjectDataSource>
+                    
                     
         </asp:ContentPlaceHolder>
             </div>
