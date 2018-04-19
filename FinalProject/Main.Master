@@ -193,7 +193,7 @@
                 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
                     <div class="button">
-                        <asp:TextBox ID="TextBox1" runat="server" Height="74px" Width="550px" style="margin-left: 7px"></asp:TextBox><br />
+                        <asp:TextBox ID="TextBox1" runat="server" Height="74px" Width="562px" style="margin-left: 0px"></asp:TextBox><br />
                     </div>
                     <div class="button">
                         <asp:Button ID="CheepButton" runat="server" Text="Cheep" BorderWidth:10px />
