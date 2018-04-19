@@ -127,7 +127,9 @@
                                 <td>
                                     <asp:LinkButton ID="NumRequest" runat="server">(0)</asp:LinkButton>
                                 </td>
-                                <td class="style6"></td>
+                                <td class="style6" style="text-align:center">
+                                    <asp:Button ID="logoutButton" runat="server" Text="LogOut" BackColor="#0066FF" BorderColor="Black" ForeColor="White" OnClick="logoutButton_Click" />
+                                </td>
                             </tr>
                         </table>
                     </td>
@@ -147,7 +149,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="profileName" runat="server">Profile Name</asp:Label>
+                            <asp:Label ID="profileNameLabel" runat="server" Font-Names="Franklin Gothic Demi" Font-Size="15pt"></asp:Label>
                         </td>
                     </tr>
                     <tr>

@@ -37,7 +37,10 @@
                      <asp:Label ID="UsernameRegister" runat="server" Text="Username" Font-Names="Cambria" ForeColor="White"></asp:Label>
                      </div>
                      <div style="text-align:left">
-                     <asp:TextBox ID="NameLoginBox" runat="server" Width="155px"></asp:TextBox>
+                     <asp:TextBox ID="NameLoginBox" runat="server" Width="155px" Height="20px"></asp:TextBox>
+                     </div>
+                     <div>
+                         <asp:RequiredFieldValidator ID="loginUserValidator" runat="server" ControlToValidate="NameLoginBox" ErrorMessage="Please enter username" ForeColor="#FF3300" ValidationGroup="loginGroup"></asp:RequiredFieldValidator>
                      </div>
                 </td>
                 <td style="width:150px">
@@ -46,12 +49,16 @@
                      <asp:Label ID="PasswordRegister" runat="server" Text="Password" Font-Names="Cambria" ForeColor="White"></asp:Label>
                      </div>
                      <div style="text-align:left">
-                     <asp:TextBox ID="PasswordLoginBox" runat="server" Width="155px"></asp:TextBox>
+                     <asp:TextBox ID="PasswordLoginBox" runat="server" Width="155px" TextMode="Password" Height="20px"></asp:TextBox>
+                     </div>
+                     <div>
+                         <asp:RequiredFieldValidator ID="loginPasswordValidator" runat="server" ControlToValidate="PasswordLoginBox" ErrorMessage="Please enter password" ForeColor="#FF3300" ValidationGroup="loginGroup"></asp:RequiredFieldValidator>
                      </div>
                 </td>
                 <td style="width:200px" >
-                    <div style="height:22px"> </div>
-                    <asp:Button ID="LoginButton" runat="server" Text="Log In" BackColor="#009999" BorderColor="Black" Font-Names="Cambria" ForeColor="White" Width="65px" />
+                    <div style="height:22px"> 
+                    <asp:Button ID="LoginButton" runat="server" Text="Log In" BackColor="#009999" BorderColor="Black" Font-Names="Cambria" ForeColor="White" Width="65px" OnClick="LoginButton_Click" ValidationGroup="loginGroup" />
+                    </div>
                 </td>
             </tr>
         </table>
@@ -87,7 +94,7 @@
                                 <asp:TextBox ID="usernameText" runat="server" Width="180px"></asp:TextBox>
                             </td>
                             <td>
-                                <asp:RequiredFieldValidator ID="usernameValidator" runat="server" ErrorMessage="Username is required" ControlToValidate="usernameText" ForeColor="#FF3300"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="usernameValidator" runat="server" ErrorMessage="Username is required" ControlToValidate="usernameText" ForeColor="#FF3300" ValidationGroup="registerGroup"></asp:RequiredFieldValidator>
                                 </td>
                         </tr>
                         <tr>
@@ -96,7 +103,7 @@
                                 <asp:TextBox ID="firstnameText" runat="server" Width="180px"></asp:TextBox>
                             </td>
                             <td>
-                                <asp:RequiredFieldValidator ID="firstnameValidator" runat="server" ErrorMessage="First name is required" ControlToValidate="firstnameText" ForeColor="#FF3300"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="firstnameValidator" runat="server" ErrorMessage="First name is required" ControlToValidate="firstnameText" ForeColor="#FF3300" ValidationGroup="registerGroup"></asp:RequiredFieldValidator>
                                 </td>
                         </tr>
                         <tr>
@@ -105,7 +112,7 @@
                                 <asp:TextBox ID="lastnameText" runat="server" Width="180px"></asp:TextBox>
                             </td>
                             <td>
-                                <asp:RequiredFieldValidator ID="lastnameValidator" runat="server" ErrorMessage="Last name is required" ControlToValidate="lastnameText" ForeColor="#FF3300"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="lastnameValidator" runat="server" ErrorMessage="Last name is required" ControlToValidate="lastnameText" ForeColor="#FF3300" ValidationGroup="registerGroup"></asp:RequiredFieldValidator>
                                 </td>
                         </tr>
                         <tr>
@@ -114,9 +121,9 @@
                                 <asp:TextBox ID="emailText" runat="server" Width="180px"></asp:TextBox>
                             </td>
                             <td>
-                                <asp:RequiredFieldValidator ID="emailValidator" runat="server" ErrorMessage="E-mail is required" ControlToValidate="emailText" ForeColor="#FF3300"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="emailValidator" runat="server" ErrorMessage="E-mail is required" ControlToValidate="emailText" ForeColor="#FF3300" ValidationGroup="registerGroup"></asp:RequiredFieldValidator>
                                 <br />
-                                <asp:RegularExpressionValidator ID="emailRegex" runat="server" ErrorMessage="Enter a valid e-mail" ForeColor="#FF3300" ControlToValidate="emailText" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="emailRegex" runat="server" ErrorMessage="Enter a valid e-mail" ForeColor="#FF3300" ControlToValidate="emailText" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="registerGroup"></asp:RegularExpressionValidator>
                                 </td>
                         </tr>
                         <tr>
@@ -125,7 +132,7 @@
                                 <asp:TextBox ID="passwordText" runat="server" Width="180px" TextMode="Password"></asp:TextBox>
                             </td>
                             <td>
-                                <asp:RequiredFieldValidator ID="passwordValidator" runat="server" ErrorMessage="Password is required" ControlToValidate="passwordText" ForeColor="#FF3300"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="passwordValidator" runat="server" ErrorMessage="Password is required" ControlToValidate="passwordText" ForeColor="#FF3300" ValidationGroup="registerGroup"></asp:RequiredFieldValidator>
                                 </td>
                         </tr>
                         <tr>
@@ -134,9 +141,9 @@
                                 <asp:TextBox ID="compasswordText" runat="server" Width="180px" TextMode="Password"></asp:TextBox>
                             </td>
                             <td>
-                                <asp:RequiredFieldValidator ID="confirmationValidator" runat="server" ErrorMessage="Confirmation is required" ControlToValidate="compasswordText" ForeColor="#FF3300"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="confirmationValidator" runat="server" ErrorMessage="Confirmation is required" ControlToValidate="compasswordText" ForeColor="#FF3300" ValidationGroup="registerGroup"></asp:RequiredFieldValidator>
                                 <br />
-                                <asp:CompareValidator ID="compareValidator" runat="server" ControlToCompare="passwordText" ControlToValidate="compasswordText" ErrorMessage="Password must match" ForeColor="#FF3300"></asp:CompareValidator>
+                                <asp:CompareValidator ID="compareValidator" runat="server" ControlToCompare="passwordText" ControlToValidate="compasswordText" ErrorMessage="Password must match" ForeColor="#FF3300" ValidationGroup="registerGroup"></asp:CompareValidator>
                                 </td>
                         </tr>
                          <tr>
@@ -149,13 +156,13 @@
                                 </asp:DropDownList>
                              </td>
                             <td>
-                                <asp:RequiredFieldValidator ID="genderValidator" runat="server" ControlToValidate="genderList" ErrorMessage="Select a gender" ForeColor="#FF3300" InitialValue="Select Gneder"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="genderValidator" runat="server" ControlToValidate="genderList" ErrorMessage="Select a gender" ForeColor="#FF3300" InitialValue="Select Gneder" ValidationGroup="registerGroup"></asp:RequiredFieldValidator>
                              </td>
                         </tr>
                          <tr>
                             <td class="auto-style7" ></td>
                             <td >
-                                <asp:Button ID="RegisterButton" runat="server" Text="Register" BackColor="#009999" ForeColor="White" OnClick="RegisterButton_Click" />
+                                <asp:Button ID="RegisterButton" runat="server" Text="Register" BackColor="#009999" ForeColor="White" OnClick="RegisterButton_Click" ValidationGroup="registerGroup" />
                              </td>
                             
                         </tr>

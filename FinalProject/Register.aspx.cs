@@ -49,8 +49,7 @@ namespace FinalProject
 
                 com.ExecuteNonQuery();
 
-                Response.Write("Registration was succesful. Proceed to Login");
-                Response.Redirect("ManageData.aspx");
+                Response.Write("Registration was succesful. Proceed to Login");          
                 c.Close();
             }
             catch (Exception ex) {
@@ -68,5 +67,50 @@ namespace FinalProject
             }
         }
 
+        protected void LoginButton_Click(object sender, EventArgs e)
+        {
+            SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["UsersConnectionString"].ConnectionString);
+            c.Open();
+            string checkuser = "select count(*) from UserTable where Username='" + NameLoginBox.Text + "'";
+            SqlCommand com = new SqlCommand(checkuser, c);
+            int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
+            c.Close();
+            if (temp == 1)
+            {
+                c.Open();
+                string checkPassword = "select password from UserTable where Username='" + NameLoginBox.Text + "'";
+                string getAttr = "select firstname, lastname from UserTable where Username='" + NameLoginBox.Text + "'";
+                SqlCommand passwordCom = new SqlCommand(checkPassword, c);
+                SqlCommand attrCom = new SqlCommand(getAttr, c);
+                string password = passwordCom.ExecuteScalar().ToString().Replace(" ","");
+
+                if (password == PasswordLoginBox.Text)
+                {
+
+                    using (SqlDataReader read = attrCom.ExecuteReader()) {
+
+                        while (read.Read()) {
+                            Session["firstname"] = read["Firstname"].ToString();
+                            Session["lastname"] = read["Lastname"].ToString();
+                        }
+                    }
+
+                    Session["username"] = NameLoginBox.Text;
+                    Response.Redirect("Home.aspx");
+
+
+                }
+                else
+                {
+
+                    Response.Write("Incorrect Password");
+                }
+            }
+            else {
+
+                Response.Write("Incorrect Username");
+            }
+           
+        }
     }
 }

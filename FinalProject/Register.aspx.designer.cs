@@ -49,6 +49,15 @@ namespace FinalProject {
         protected global::System.Web.UI.WebControls.TextBox NameLoginBox;
         
         /// <summary>
+        /// loginUserValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator loginUserValidator;
+        
+        /// <summary>
         /// PasswordRegister control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace FinalProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PasswordLoginBox;
+        
+        /// <summary>
+        /// loginPasswordValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator loginPasswordValidator;
         
         /// <summary>
         /// LoginButton control.

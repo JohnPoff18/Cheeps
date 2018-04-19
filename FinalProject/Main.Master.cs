@@ -12,6 +12,22 @@ namespace FinalProject
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["username"] != null) {
+
+                profileNameLabel.Text = Session["firstname"].ToString() + " " + Session["lastname"].ToString();
+            }
+            else
+            {
+                Response.Redirect("Register.aspx");
+            }
+
+
+        }
+
+        protected void logoutButton_Click(object sender, EventArgs e)
+        {
+            Session["username"] = null;
+            Response.Redirect("Register.aspx");
         }
     }
 }
