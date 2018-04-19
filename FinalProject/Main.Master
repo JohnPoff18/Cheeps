@@ -97,6 +97,7 @@
             height:800px;
             float:right;
          }
+       
     </style>
 </head>
 <body>
@@ -183,6 +184,8 @@
             <div class="centerpage">
                 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
+                    
+                    
         </asp:ContentPlaceHolder>
             </div>
             <div class="rightpage"></div>

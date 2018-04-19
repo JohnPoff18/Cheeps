@@ -29,5 +29,10 @@ namespace FinalProject
             Session["username"] = null;
             Response.Redirect("Register.aspx");
         }
+
+        protected void DetailsView2_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+        {
+
+        }
     }
 }
