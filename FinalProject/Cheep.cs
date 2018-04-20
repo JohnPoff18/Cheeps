@@ -9,6 +9,6 @@ namespace FinalProject
     {
         public String username { get; set; }
         public String cheep { get; set; }
-        public String date { get; set; }
+        public DateTime date { get; set; }
     }
 }

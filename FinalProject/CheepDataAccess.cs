@@ -19,16 +19,16 @@ namespace FinalProject
             {
                 db.Open();
 
-                using (SqlCommand selectAllCheeps = new SqlCommand("SELECT TOP(5) Username, Cheep FROM [CHEEPS]", db))
+                using (SqlCommand selectAllCheeps = new SqlCommand("SELECT TOP(5) Uname, Cheep, Date FROM [CHEEPS] ORDER BY Date ASC", db))
                 {
                     using (SqlDataReader cheepsTableReader = selectAllCheeps.ExecuteReader())
                     {
                         while (cheepsTableReader.Read())
                         {
                             Cheep newCheep = new Cheep();
-                            newCheep.username = Convert.ToString(cheepsTableReader["Username"]);
+                            newCheep.username = Convert.ToString(cheepsTableReader["Uname"]);
                             newCheep.cheep = Convert.ToString(cheepsTableReader["Cheep"]);
-                            //newCheep.date = Convert.ToString(cheepsTableReader["Date"]);
+                            newCheep.date = Convert.ToDateTime(cheepsTableReader["Date"]);
 
                             cheepList.Add(newCheep);
                         }

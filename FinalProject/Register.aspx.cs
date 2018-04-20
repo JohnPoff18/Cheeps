@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
-using System.Configuration;
+using System.Configuration; 
 
 namespace FinalProject
 {
@@ -34,9 +34,10 @@ namespace FinalProject
         {
             try
             {
+
                 SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["UsersConnectionString"].ConnectionString);
                 c.Open();
-                string insert = "insert into UserTable (Username, Firstname, Lastname, Email, Password, Gender) values (@uname, @fname, @lname, @email, @password, @gender)";
+                string insert = "insert into UserTable (Username, Firstname, Lastname, Email, Password, Gender, Picture) values (@uname, @fname, @lname, @email, @password, @gender, @picture)";
                 SqlCommand com = new SqlCommand(insert, c);
          
 
