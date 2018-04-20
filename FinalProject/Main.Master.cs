@@ -70,5 +70,10 @@ namespace FinalProject
                 Response.Write("Invalid picture file.");
             }
         }
+
+        protected void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Search.aspx?searchString=" + TextSearch.Text);
+        }
     }
 }

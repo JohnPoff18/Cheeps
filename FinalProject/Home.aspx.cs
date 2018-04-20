@@ -29,8 +29,8 @@ namespace FinalProject
             com.Parameters.AddWithValue("id", Guid.NewGuid());
 
             com.ExecuteNonQuery();
-
-            Response.Write("Cheep Successful!");
+            
+            Response.Redirect("Home.aspx");
             c.Close();
 
         }
