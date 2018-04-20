@@ -37,7 +37,7 @@ namespace FinalProject
 
                 SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["UsersConnectionString"].ConnectionString);
                 c.Open();
-                string insert = "insert into UserTable (Username, Firstname, Lastname, Email, Password, Gender, Picture) values (@uname, @fname, @lname, @email, @password, @gender, @picture)";
+                string insert = "insert into UserTable (Username, Firstname, Lastname, Email, Password, Gender) values (@uname, @fname, @lname, @email, @password, @gender)";
                 SqlCommand com = new SqlCommand(insert, c);
          
 
