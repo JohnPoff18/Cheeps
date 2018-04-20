@@ -14,7 +14,8 @@ namespace FinalProject
 
             if (Session["username"] != null) {
 
-                profileNameLabel.Text = Session["firstname"].ToString() + " " + Session["lastname"].ToString();
+                profileNameLabel.Text = Session["Username"].ToString();
+
             }
             else
             {
