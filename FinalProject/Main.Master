@@ -97,6 +97,17 @@
             height:800px;
             float:right;
          }
+        .livefeed
+        {
+            font-size:18px;
+            text-align:left;
+            border:solid 10px #fbfbfb;
+       
+        }
+        .button
+        {
+            border:solid 10px #fbfbfb;
+        }
        
     </style>
 </head>
