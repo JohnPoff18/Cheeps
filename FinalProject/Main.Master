@@ -167,7 +167,7 @@
                     <tr>
                         <td >
                             <asp:FileUpload ID="FileUpload1" runat="server" Width="140px" />
-                            <asp:Button ID="buttonUpload" runat="server" Text="Upload" BackColor="#0066FF" BorderColor="Black" ForeColor="White" />
+                            <asp:Button ID="buttonUpload" runat="server" Text="Upload" BackColor="#0066FF" BorderColor="Black" ForeColor="White" OnClick="buttonUpload_Click" />
                         </td>
                     </tr>
                     <tr>

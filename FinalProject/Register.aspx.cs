@@ -79,7 +79,7 @@ namespace FinalProject
             {
                 c.Open();
                 string checkPassword = "select password from UserTable where Username='" + NameLoginBox.Text + "'";
-                string getAttr = "select firstname, lastname from UserTable where Username='" + NameLoginBox.Text + "'";
+                string getAttr = "select firstname, lastname, profilepic from UserTable where Username='" + NameLoginBox.Text + "'";
                 SqlCommand passwordCom = new SqlCommand(checkPassword, c);
                 SqlCommand attrCom = new SqlCommand(getAttr, c);
                 string password = passwordCom.ExecuteScalar().ToString().Replace(" ","");
@@ -92,6 +92,7 @@ namespace FinalProject
                         while (read.Read()) {
                             Session["firstname"] = read["Firstname"].ToString();
                             Session["lastname"] = read["Lastname"].ToString();
+                            Session["profilepic"] = read["profilePic"].ToString();
                         }
                     }
 
