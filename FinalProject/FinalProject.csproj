@@ -19,10 +19,8 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication>
-    </IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>
-    </IISExpressWindowsAuthentication>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
@@ -69,6 +67,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Search.aspx" />
+    <Content Include="FriendRequest.aspx" />
+    <Content Include="MyFriends.aspx" />
     <None Include="packages.config" />
     <Content Include="App_Data\CheepsDatabase.mdf" />
     <Content Include="App_Data\CheepsDatabase_log.ldf">
@@ -134,6 +135,27 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FriendRequest.aspx.cs">
+      <DependentUpon>FriendRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FriendRequest.aspx.designer.cs">
+      <DependentUpon>FriendRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyFriends.aspx.cs">
+      <DependentUpon>MyFriends.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyFriends.aspx.designer.cs">
+      <DependentUpon>MyFriends.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

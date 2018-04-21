@@ -36,12 +36,7 @@ namespace FinalProject
         {
             Session["username"] = null;
             Response.Redirect("Register.aspx");
-        }
-
-        protected void DetailsView2_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
-        {
-
-        }
+        }        
 
         protected void buttonUpload_Click(object sender, EventArgs e)
         {
@@ -69,6 +64,11 @@ namespace FinalProject
             {
                 Response.Write("Invalid picture file.");
             }
+        }
+
+        protected void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Search.aspx?searchString=" + TextSearch.Text);
         }
     }
 }

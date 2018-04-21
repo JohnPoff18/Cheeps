@@ -7,7 +7,7 @@
         <asp:TextBox ID="CheepBox" runat="server" Height="74px" Width="562px" style="margin-left: 0px" Text="Cheep what's on your mind..."></asp:TextBox><br />
     </div>
     <div class="button">
-    <asp:Button ID="CheepButton" runat="server" Text="Cheep" BorderWidth:10px OnClick="CheepButton_Click"/>
+    <asp:Button ID="CheepButton" runat="server" Text="Cheep" OnClick="CheepButton_Click"/>
     </div>
     <div>
     <asp:ListView ID="ListViewCheeps" runat="server" DataSourceID ="CheepsDataSource" class="livefeed">

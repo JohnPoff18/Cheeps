@@ -45,6 +45,11 @@
          {
              width:40px;
          }
+
+         .style8{
+
+             width:54px;
+         }
          .profileimg
          {
             border-radius:6px;
@@ -108,6 +113,25 @@
         {
             border:solid 10px #fbfbfb;
         }
+
+         .tbl
+         {
+             width:100%;
+         }
+
+        .tblSearch
+        {
+            height:35px;
+            background:lightskyblue;
+            font-size:25pt;
+            font-weight:bold;
+        }
+
+        .grid
+        {
+           background-color:Transparent;
+           border: solid thin #ccc;
+        }
        
     </style>
 </head>
@@ -127,7 +151,7 @@
 
                         <asp:TextBox ID="TextSearch" runat="server" Width="150px" BackColor="White" BorderStyle="Solid" ForeColor="Gray"></asp:TextBox>
                         &nbsp;                   
-                        <asp:Button ID="ButtonSearch" runat="server" Text="Search" BackColor="#0066FF" BorderColor="Black" ForeColor="White" />
+                        <asp:Button ID="ButtonSearch" runat="server" Text="Search" BackColor="#0066FF" BorderColor="Black" ForeColor="White" OnClick="ButtonSearch_Click" />
                     </td>
                     <td class="style5">
                         <table class="style5" style="height:60px">
@@ -176,10 +200,10 @@
                             <asp:Menu ID="Menu1" runat="server" Width="100%" ForeColor="White" Font-Names="Century Gothic" Font-Size="15pt">
                                 <Items>
 
-                                    <asp:MenuItem Text="Live Feed" Value="Live Feed"></asp:MenuItem>
-                                    <asp:MenuItem Text="My Friends" Value="My Friends"></asp:MenuItem>
+                                    <asp:MenuItem Text="Live Feed" Value="Live Feed" NavigateUrl="~/Home.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="My Friends" Value="My Friends" NavigateUrl="~/MyFriends.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="My Albums" Value="My Albums"></asp:MenuItem>
-                                    <asp:MenuItem Text="Friend Requests" Value="Friend Requests"></asp:MenuItem>
+                                    <asp:MenuItem Text="Friend Requests" Value="Friend Requests" NavigateUrl="~/FriendRequest.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="Liked Posts" Value="Liked Posts"></asp:MenuItem>
 
                                 </Items>

@@ -19,7 +19,7 @@ namespace FinalProject
             {
                 db.Open();
 
-                using (SqlCommand selectAllCheeps = new SqlCommand("SELECT TOP(5) Uname, Cheep, Date FROM [CHEEPS] ORDER BY Date ASC", db))
+                using (SqlCommand selectAllCheeps = new SqlCommand("SELECT TOP(5) Uname, Cheep, Date FROM [CHEEPS] ORDER BY Date DESC", db))
                 {
                     using (SqlDataReader cheepsTableReader = selectAllCheeps.ExecuteReader())
                     {
