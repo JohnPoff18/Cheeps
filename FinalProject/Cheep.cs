@@ -10,5 +10,6 @@ namespace FinalProject
         public String username { get; set; }
         public String cheep { get; set; }
         public DateTime date { get; set; }
+        public String picture { get; set; }
     }
 }

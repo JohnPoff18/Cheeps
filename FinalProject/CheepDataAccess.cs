@@ -30,6 +30,8 @@ namespace FinalProject
                             newCheep.cheep = Convert.ToString(cheepsTableReader["Cheep"]);
                             newCheep.date = Convert.ToDateTime(cheepsTableReader["Date"]);
 
+                        
+
                             cheepList.Add(newCheep);
                         }
                     }

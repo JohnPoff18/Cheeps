@@ -14,13 +14,15 @@
         <LayoutTemplate>
             <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
         </LayoutTemplate>
-                        
+        
                             
         <ItemTemplate>
             <div id="livefeed" runat="server" class="livefeed">
+                <center><asp:Image ID="Livefeedimage" runat="server" Height="50px" Width="50px" ImageUrl="/Images/Default.png"/><br />
+                
                 <%#Eval("Username") %> : 
                 <%#Eval("Cheep") %><br />
-                <%#Eval("Date") %><br />
+                <%#Eval("Date") %><br /></center>
                
             </div>
          </ItemTemplate>
