@@ -27,7 +27,7 @@ namespace FinalProject
                 friendsDataList.DataBind();
 
                 c.Close();
-            }
+            } 
         }
 
         protected void friendsDataList_ItemCommand(object source, DataListCommandEventArgs e)
