@@ -36,12 +36,7 @@ namespace FinalProject
         {
             Session["username"] = null;
             Response.Redirect("Register.aspx");
-        }
-
-        protected void DetailsView2_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
-        {
-
-        }
+        }        
 
         protected void buttonUpload_Click(object sender, EventArgs e)
         {

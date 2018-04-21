@@ -200,10 +200,10 @@
                             <asp:Menu ID="Menu1" runat="server" Width="100%" ForeColor="White" Font-Names="Century Gothic" Font-Size="15pt">
                                 <Items>
 
-                                    <asp:MenuItem Text="Live Feed" Value="Live Feed"></asp:MenuItem>
-                                    <asp:MenuItem Text="My Friends" Value="My Friends"></asp:MenuItem>
+                                    <asp:MenuItem Text="Live Feed" Value="Live Feed" NavigateUrl="~/Home.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="My Friends" Value="My Friends" NavigateUrl="~/MyFriends.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="My Albums" Value="My Albums"></asp:MenuItem>
-                                    <asp:MenuItem Text="Friend Requests" Value="Friend Requests"></asp:MenuItem>
+                                    <asp:MenuItem Text="Friend Requests" Value="Friend Requests" NavigateUrl="~/FriendRequest.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="Liked Posts" Value="Liked Posts"></asp:MenuItem>
 
                                 </Items>

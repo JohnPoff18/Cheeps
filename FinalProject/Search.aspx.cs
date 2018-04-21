@@ -51,8 +51,8 @@ namespace FinalProject
 
                     SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["UsersConnectionString"].ConnectionString);
                     c.Open();
-                    string insert1 = "insert into FriendTable (Username, friendUserName, flag) values (@uname1, @fusername1, @friendflag1)";
-                    string insert2 = "insert into FriendTable (Username, friendUserName, flag) values (@uname2, @fusername2, @friendflag2)";
+                    string insert1 = "insert into FriendTable (Uname, friendUserName, flag) values (@uname1, @fusername1, @friendflag1)";
+                    string insert2 = "insert into FriendTable (Uname, friendUserName, flag) values (@uname2, @fusername2, @friendflag2)";
                     SqlCommand cmd1 = new SqlCommand(insert1, c);
                     SqlCommand cmd2 = new SqlCommand(insert2, c);
 
