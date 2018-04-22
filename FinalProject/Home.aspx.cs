@@ -13,7 +13,16 @@ namespace FinalProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["UsersConnectionString"].ConnectionString);
+            string findUser = "SELECT TOP(20) c.Uname, c.Cheep, c.Date, profilePic FROM[CHEEPS] as c, [USERTABLE], [FRIENDTABLE] as f WHERE c.Uname = Username AND ((c.Uname = f.friendUsername AND f.Uname = '" + Session["Username"] + "') OR c.Uname = '" + Session["Username"] + "') ORDER BY Date DESC";
+            c.Open();
+
+            SqlCommand cmd = new SqlCommand(findUser, c);
+
+            SqlDataReader read = cmd.ExecuteReader();
+
+            liveFeedDataList.DataSource = read;
+            liveFeedDataList.DataBind();
         }
 
         protected void CheepButton_Click(object sender, EventArgs e)
@@ -35,9 +44,7 @@ namespace FinalProject
 
         }
 
-        protected void CheepButton_Click1(object sender, EventArgs e)
-        {
+      
 
-        }
     }
 }

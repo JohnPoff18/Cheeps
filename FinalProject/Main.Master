@@ -95,6 +95,7 @@
             height:800px;
             border:solid 1px #ccc;
             float:left;
+            overflow-y:auto;
          }
         .rightpage
         {
