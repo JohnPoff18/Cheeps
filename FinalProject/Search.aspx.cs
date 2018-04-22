@@ -15,21 +15,34 @@ namespace FinalProject
         {
             if (Page.IsPostBack == false)
             {
-                string firstname;
-                string lastname;
 
                 ViewState["searchString"] = Request.QueryString["searchString"].ToString();
                 searchLabel.Text = "'" + ViewState["searchString"].ToString() + "'";
 
-                string[] fullname = ViewState["searchString"].ToString().Split(' ');
-                if (fullname.Length == 2)
+                //Break the search into words
+                string[] searchWords = ViewState["searchString"].ToString().Split(' ');
+
+                if (searchWords[0] != "")
                 {
-                    firstname = fullname[0].ToLower();
-                    lastname = fullname[1].ToLower();
+                    //Match each word to either be a first, last, or user name
+                    string fuzzyMatchPart = "";
+                    
+                    for (int i = 0; i < searchWords.Length - 1; i++)
+                    {
+                        fuzzyMatchPart += "LOWER(Firstname) like '" + searchWords[i] +
+                            "%' or LOWER(Lastname) like '" + searchWords[i] +
+                            "%' or LOWER(Username) like '" + searchWords[i] + "%' or ";
+                    }
+
+                    //this one doesn't include the "or" on the end
+                    fuzzyMatchPart += "LOWER(Firstname) like '" + searchWords[searchWords.Length - 1] +
+                            "%' or LOWER(Lastname) like '" + searchWords[searchWords.Length - 1] +
+                            "%' or LOWER(Username) like '" + searchWords[searchWords.Length - 1] + "%'";
 
                     SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["UsersConnectionString"].ConnectionString);
+                    string findUser = "select username, firstname, lastname, profilepic from UserTable where Username != '" + Session["username"] + "' and (" + fuzzyMatchPart + ")";
                     c.Open();
-                    string findUser = "select username, firstname, lastname, profilepic from UserTable where LOWER(Firstname)='" + firstname + "' and LOWER(Lastname)='" + lastname + "' and Username!='" + Session["username"] + "'";
+
                     SqlCommand cmd = new SqlCommand(findUser, c);
 
                     SqlDataReader read = cmd.ExecuteReader();
@@ -37,6 +50,7 @@ namespace FinalProject
                     searchDataList.DataSource = read;
                     searchDataList.DataBind();
                 }
+                
             }
         }
 
