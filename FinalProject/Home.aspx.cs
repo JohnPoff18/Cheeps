@@ -14,7 +14,7 @@ namespace FinalProject
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["UsersConnectionString"].ConnectionString);
-            string findUser = "SELECT TOP(20) c.Uname, c.Cheep, c.Date, profilePic FROM[CHEEPS] as c, [FRIENDTABLE] as f WHERE c.Uname = '"+Session["Username"]+"' OR (c.Uname = f.friendUsername AND f.Uname = '" + Session["Username"] + "') ORDER BY Date DESC";
+            string findUser = "SELECT DISTINCT TOP(20) c.Uname, c.Cheep, c.Date, profilePic FROM[CHEEPS] as c, [USERTABLE], [FRIENDTABLE] as f WHERE c.Uname = Username AND f.flag = 2 AND ((c.Uname = f.friendUsername AND f.Uname = '" + Session["Username"] + "') OR c.Uname = '" + Session["Username"] + "') ORDER BY Date DESC";
             c.Open();
 
             SqlCommand cmd = new SqlCommand(findUser, c);
