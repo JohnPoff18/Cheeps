@@ -23,6 +23,17 @@ namespace FinalProject
                 {
                     Image1.ImageUrl = Session["profilepic"].ToString();
                 }
+
+                SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["UsersConnectionString"].ConnectionString);
+                c.Open();
+                string checkuser = "select count(*) from FriendTable where Uname='" + Session["Username"] + "' and flag = 1";
+                SqlCommand com = new SqlCommand(checkuser, c);
+                int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
+                
+                com.ExecuteNonQuery();
+
+                NumRequest.Text = temp.ToString();
+                c.Close();
             }
             else
             {
@@ -69,6 +80,11 @@ namespace FinalProject
         protected void ButtonSearch_Click(object sender, EventArgs e)
         {
             Response.Redirect("Search.aspx?searchString=" + TextSearch.Text);
+        }
+
+        protected void NumRequest_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FriendRequest.aspx");
         }
     }
 }

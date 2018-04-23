@@ -29,7 +29,11 @@
                                
                                 </td>                              
                             </tr>
-                            
+                            <tr>
+                                <td style="text-align:right">
+                                    <asp:Button ID="unfriendButton" runat="server" Text="Unfriend" BackColor="#0066FF" BorderColor="Black" ForeColor="White" CommandName="unfriend" />                                   
+                                </td>                           
+                            </tr>
                             <tr>
                                  <td>
                                      Full Name:

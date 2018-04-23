@@ -162,7 +162,7 @@
                                     <asp:Image ID="Imagefriend" runat="server" Height="40px" src="Images/request.png"/>
                                 </td>
                                 <td>
-                                    <asp:LinkButton ID="NumRequest" runat="server">(0)</asp:LinkButton>
+                                    <asp:LinkButton ID="NumRequest" runat="server" OnClick="NumRequest_Click"></asp:LinkButton>
                                 </td>
                                 <td class="style6" style="text-align:center">
                                     <asp:Button ID="logoutButton" runat="server" Text="LogOut" BackColor="#0066FF" BorderColor="Black" ForeColor="White" OnClick="logoutButton_Click" />
