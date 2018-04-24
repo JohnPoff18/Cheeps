@@ -20,7 +20,7 @@
                             <tr>
                                 <td class="style8" rowspan="4">
 
-                                    <asp:Image ID="imageLabel" runat="server" Height="73px" Width="63px" ImageUrl='<%#Eval("profilePic") %>'/>
+                                    <asp:Image ID="imageLabel" runat="server" Height="75px" Width="75px" ImageUrl='<%#Eval("profilePic") %>'/>
                                 </td>
                                 <td>
                                     

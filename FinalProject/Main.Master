@@ -181,7 +181,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Image ID="Image1" runat="server" Height="150px" Width="130px" CssClass="profileimg"/>
+                            <asp:Image ID="Image1" runat="server" Height="150px" Width="150px" CssClass="profileimg"/>
                         </td>
                     </tr>
                     <tr>
@@ -203,9 +203,7 @@
 
                                     <asp:MenuItem Text="Live Feed" Value="Live Feed" NavigateUrl="~/Home.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="My Friends" Value="My Friends" NavigateUrl="~/MyFriends.aspx"></asp:MenuItem>
-                                    <asp:MenuItem Text="My Albums" Value="My Albums"></asp:MenuItem>
                                     <asp:MenuItem Text="Friend Requests" Value="Friend Requests" NavigateUrl="~/FriendRequest.aspx"></asp:MenuItem>
-                                    <asp:MenuItem Text="Liked Posts" Value="Liked Posts"></asp:MenuItem>
 
                                 </Items>
                                 <StaticMenuItemStyle CssClass="menu" Width="220px"/>
