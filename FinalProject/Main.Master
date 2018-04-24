@@ -202,6 +202,7 @@
                                 <Items>
 
                                     <asp:MenuItem Text="Live Feed" Value="Live Feed" NavigateUrl="~/Home.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="My Profile" Value="My Friends" NavigateUrl="~/Profile.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="My Friends" Value="My Friends" NavigateUrl="~/MyFriends.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="Friend Requests" Value="Friend Requests" NavigateUrl="~/FriendRequest.aspx"></asp:MenuItem>
 
